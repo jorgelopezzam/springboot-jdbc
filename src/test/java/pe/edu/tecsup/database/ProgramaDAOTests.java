@@ -22,6 +22,8 @@ public class ProgramaDAOTests {
 
         List<Programa> programas = programaDAO.list();
         for (Programa programa : programas) {
+            System.out.println(programa.getId());
+            System.out.println(programa.getCodigo());
             System.out.println(programa.getNombre());
         }
         Assert.assertTrue(programas.size() > 0);
@@ -34,39 +36,39 @@ public class ProgramaDAOTests {
         Assert.assertTrue(programa.getId() == 1l);
     }
 
-    @Test
-    public void verifySave() {
+//    @Test
+//    public void verifySave() {
+//
+//        Programa programa = new Programa();
+//        programa.setCodigo("2020");
+//        programa.setNombre("Nuevo Programa Jorge");
+//        programa.setDescripcion("......");
+//
+//        programaDAO.save(programa);
+//        Assert.assertTrue(programa.getId() != null);
+//    }
 
-        Programa programa = new Programa();
-        programa.setCodigo("1020");
-        programa.setNombre("Nuevo Programa");
-        programa.setDescripcion("......");
-
-        programaDAO.save(programa);
-        Assert.assertTrue(programa.getId() != null);
-    }
-
-    @Test
-    public void verifyUpdate() {
-
-        // cambiar el código para validar
-        Programa programa = new Programa();
-        programa.setId(1l);
-        programa.setCodigo("999");
-        programa.setNombre("Programa Modificado");
-
-        programaDAO.update(programa);
-        Assert.assertTrue(programaDAO.get(1l).getCodigo().equals("999"));
-    }
-
-    @Test
-    public void verifyDelete() {
-
-        Programa programa = new Programa();
-        programa.setId(3l);
-        programaDAO.delete(programa);
-
-        Assert.assertTrue(programaDAO.get(3l) == null);
-    }
+//    @Test
+//    public void verifyUpdate() {
+//
+//        // cambiar el código para validar
+//        Programa programa = new Programa();
+//        programa.setId(10l);
+//        programa.setCodigo("2020");
+//        programa.setNombre("Programa Modificado Jorge");
+//
+//        programaDAO.update(programa);
+//        Assert.assertTrue(programaDAO.get(10l).getNombre().equals("Programa Modificado Jorge"));
+//    }
+//
+//    @Test
+//    public void verifyDelete() {
+//
+//        Programa programa = new Programa();
+//        programa.setId(10l);
+//        programaDAO.delete(programa);
+//
+//        Assert.assertTrue(programaDAO.get(10l) == null);
+//    }
 
 }
